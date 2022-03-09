@@ -1,0 +1,2 @@
+sample	type	platform	machine	flowcell	lane	barcode	fastq1	fastq2	adapter
+HD827sonic	N	NextSeq	NDX550220	HKTG2BGXG	lane1	ACGGAACA+ACGAGAAC	fastq/HD827sonic_testing1_R1.fastq.gz	fastq/HD827sonic_testing1_R2.fastq.gz	AGATCGGAAGAGCACACGTCTGAACTCCAGTCA,AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT
