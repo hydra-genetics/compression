@@ -88,3 +88,5 @@ The following output files should be targeted via another rule:
 | `compression/spring/{sample}_{flowcell}_{lane}_{type}.spring` | `spring`-compressed `.fastq` read file pair |
 
 ## :judge: Rule Graph
+
+![rule_graph](images/rulegraph.svg)
