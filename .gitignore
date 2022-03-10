@@ -1,0 +1,4 @@
+.eggs
+.snakemake
+__pycache__
+compression
