@@ -16,7 +16,7 @@ properties:
     description: name or path to a default docker/singularity container
   spring:
     type: object
-    description: parameters for fastp_pe
+    description: parameters for spring
     properties:
       benchmark_repeats:
         type: integer

@@ -29,7 +29,7 @@ properties:
       - time
   spring:
     type: object
-    description: resource definitions for fastp_pe
+    description: resource definitions for spring
     properties:
       mem_mb:
         type: integer
