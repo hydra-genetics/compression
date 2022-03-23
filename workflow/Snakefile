@@ -5,6 +5,8 @@ __license__ = "GPL-3"
 
 
 include: "rules/common.smk"
+include: "rules/crumble.smk"
+include: "rules/samtools.smk"
 include: "rules/spring.smk"
 
 

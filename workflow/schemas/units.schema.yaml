@@ -35,10 +35,7 @@ properties:
 required:
   - sample
   - type
-  - platform
-  - machine
   - flowcell
   - lane
   - fastq1
   - fastq2
-  - adapter

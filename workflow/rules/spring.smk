@@ -11,7 +11,7 @@ rule spring:
             get_fastq_file(units, wildcards, "fastq2"),
         ],
     output:
-        spring="compression/spring/{sample}_{flowcell}_{lane}_{type}.spring",
+        spring=temp("compression/spring/{sample}_{flowcell}_{lane}_{type}.spring"),
     params:
         extra=get_spring_extra,
     log:

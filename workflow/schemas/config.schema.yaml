@@ -11,9 +11,42 @@ properties:
   units:
     type: string
     description: path to units.tsv file
+  reference:
+    type: object
+    description: paths to reference files
+    properties:
+      fasta:
+        type: string
+        description: path to reference fasta file
   default_container:
     type: string
     description: name or path to a default docker/singularity container
+  crumble:
+    type: object
+    description: parameters for crumble
+    properties:
+      benchmark_repeats:
+        type: integer
+        description: set number of times benchmark should be repeated
+      container:
+        type: string
+        description: name or path to docker/singularity container
+      extra:
+        type: string
+        description: parameters that should be forwarded
+  samtools_view:
+    type: object
+    description: parameters for samtools_view
+    properties:
+      benchmark_repeats:
+        type: integer
+        description: set number of times benchmark should be repeated
+      container:
+        type: string
+        description: name or path to docker/singularity container
+      extra:
+        type: string
+        description: parameters that should be forwarded
   spring:
     type: object
     description: parameters for spring

@@ -12,8 +12,9 @@
 ## :speech_balloon: Introduction
 
 The module contains rules to compress big data files prior to storage. `.fastq`-files should be compressed using
-`spring` which can save up to 80% storage space. Input data should be specified via `samples.tsv`
-and `units.tsv`.
+`spring` which can save up to 80% storage space. For `.bam`-files, `.crumble.cram` compression is the weapon of
+choice. Alignment `.bam`-files can be generated with `hydra-genetics/alignment` or `hydra-genetics/parabricks`
+making for a smooth transition. Input data should be specified via `samples.tsv` and `units.tsv`.
 
 ## :heavy_exclamation_mark: Dependencies
 
@@ -49,6 +50,10 @@ The following information need to be added to these files:
 | fastq1/2 | absolute path to forward and reverse reads |
 | adapter | adapter sequences to be trimmed, separated by comma |
 
+### Reference data
+
+A reference `.fasta`-file should be specified in `config.yaml` in the section `reference` and `fasta`.
+
 ## :white_check_mark: Testing
 
 The workflow repository contains a small test dataset `.tests/integration` which can be run like so:
@@ -70,7 +75,7 @@ module compression:
         github(
             "hydra-genetics/compression",
             path="workflow/Snakefile",
-            tag="1.0.0",
+            tag="v0.1.0",
         )
     config:
         config
@@ -85,6 +90,7 @@ The following output files should be targeted via another rule:
 
 | File | Description |
 |---|---|
+| `compression/crumble/{file}.crumble.cram` | `crumble`-compressed `.cram` alignment files |
 | `compression/spring/{sample}_{flowcell}_{lane}_{type}.spring` | `spring`-compressed `.fastq` read file pair |
 
 ## :judge: Rule Graph
