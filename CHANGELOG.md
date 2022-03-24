@@ -1,5 +1,27 @@
 # Changelog
 
+## [1.0.0](https://www.github.com/hydra-genetics/compression/compare/v0.1.0...v1.0.0) (2022-03-24)
+
+
+### ⚠ BREAKING CHANGES
+
+* add crumble cram
+
+### Features
+
+* add crumble cram ([a5bdec1](https://www.github.com/hydra-genetics/compression/commit/a5bdec14360e17770ef8e371a5bd4d1a8f9a2d4c))
+* Remove required prop for columns not required in this module ([4a684f2](https://www.github.com/hydra-genetics/compression/commit/4a684f22c44ba4854b8a63d02744d2538121ed8f))
+
+
+### Bug Fixes
+
+* Add snakemake-wrapper utils to samtools env ([c58649a](https://www.github.com/hydra-genetics/compression/commit/c58649a22d12202b147af1c1dbb268f9f5539e9d))
+
+
+### Documentation
+
+* Update README with crumble cram ([ace6e42](https://www.github.com/hydra-genetics/compression/commit/ace6e4286141dea4985e518d98319f0c495c5382))
+
 ## 0.1.0 (2022-03-10)
 
 
