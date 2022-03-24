@@ -49,6 +49,14 @@ wildcard_constraints:
 ### Functions
 
 
+def get_samtools_view_extra(wildcards: snakemake.io.Wildcards):
+    extra = "{extra} -T {ref}".format(
+        extra=config.get("samtools_view", {}).get("extra", ""),
+        ref=config.get("reference", {}).get("fasta", ""),
+    )
+    return extra
+
+
 def get_spring_extra(wildcards: snakemake.io.Wildcards):
     extra = config.get("spring", {}).get("extra", "")
     if get_fastq_file(units, wildcards, "fastq1").endswith(".gz"):
@@ -57,10 +65,18 @@ def get_spring_extra(wildcards: snakemake.io.Wildcards):
 
 
 def compile_output_list(wildcards: snakemake.io.Wildcards):
-    return [
+    output_list = [
         "compression/spring/%s_%s_%s_%s.spring" % (sample, flowcell, lane, t)
         for sample in set(units["sample"])
         for flowcell in set(units["flowcell"])
         for lane in set(units["lane"])
         for t in set(units["type"])
     ]
+    output_list.append(
+        [
+            "compression/crumble/%s_%s.crumble.cram" % (sample, t)
+            for sample in get_samples(samples)
+            for t in get_unit_types(units, sample)
+        ]
+    )
+    return output_list
