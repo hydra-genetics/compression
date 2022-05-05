@@ -33,7 +33,7 @@ validate(samples, schema="../schemas/samples.schema.yaml")
 
 ### Read and validate units file
 
-units = pandas.read_table(config["units"], dtype=str).set_index(["sample", "type", "flowcell", "lane"], drop=False).sort_index()
+units = pandas.read_table(config["units"], dtype=str).set_index(["sample", "type", "flowcell", "lane", "barcode"], drop=False).sort_index()
 validate(units, schema="../schemas/units.schema.yaml")
 
 
@@ -66,10 +66,11 @@ def get_spring_extra(wildcards: snakemake.io.Wildcards):
 
 def compile_output_list(wildcards: snakemake.io.Wildcards):
     output_list = [
-        "compression/spring/%s_%s_%s_%s.spring" % (sample, flowcell, lane, t)
+        "compression/spring/%s_%s_%s_%s_%s.spring" % (sample, flowcell, lane, barcode, t)
         for sample in set(units["sample"])
         for flowcell in set(units["flowcell"])
         for lane in set(units["lane"])
+        for barcode in set(units["barcode"])
         for t in set(units["type"])
     ]
     output_list.append(
