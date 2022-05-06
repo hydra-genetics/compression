@@ -6,8 +6,8 @@ __license__ = "GPL3"
 
 rule samtools_view:
     input:
-        bam="alignment/merge_bam/{file}.bam",
-        bai="alignment/merge_bam/{file}.bam.bai",
+        bam="alignment/samtools_merge_bam/{file}.bam",
+        bai="alignment/samtools_merge_bam/{file}.bam.bai",
         ref=config.get("reference", {}).get("fasta", ""),
     output:
         cram=temp("compression/samtools_view/{file}.cram"),
