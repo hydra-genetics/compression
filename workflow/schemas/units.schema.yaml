@@ -33,9 +33,10 @@ properties:
     type: string
     description: one or more sequence, separated by ","
 required:
-  - sample
-  - type
-  - flowcell
-  - lane
+  - barcode
   - fastq1
   - fastq2
+  - flowcell
+  - lane
+  - sample
+  - type
