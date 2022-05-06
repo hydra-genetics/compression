@@ -4,7 +4,7 @@ from hydra_genetics.utils.resources import load_resources
 rule all:
     input:
         "compression/spring/NA12878_HKTG2BGXG_L001_ACGGAACA+ACGAGAAC_N.spring",
-        "compression/crumble/NA12878_N.crumble.cram"
+        "compression/crumble/NA12878_N.crumble.cram",
 
 
 configfile: "config.yaml"
