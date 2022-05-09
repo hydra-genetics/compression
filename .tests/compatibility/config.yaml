@@ -1,0 +1,31 @@
+samples: "samples.tsv"
+units: "units.tsv"
+resources: "resources.yaml"
+
+trimmer_software: "fastp_pe"
+
+default_container: "docker://hydragenetics/common:0.1.3"
+
+reference:
+  fasta: "reference/WASH7P.fna"
+  dict: "reference/WASH7P.dict"
+  amb: "reference/WASH7P.fna.amb"
+  ann: "reference/WASH7P.fna.ann"
+  bwt: "reference/WASH7P.fna.bwt"
+  fai: "reference/WASH7P.fna.fai"
+  pac: "reference/WASH7P.fna.pac"
+  sa: "reference/WASH7P.fna.sa"
+  design_bed: "reference/twist_DNA_solid.HES45.annotated.bed"
+
+bwa_mem:
+  container: "docker://hydragenetics/bwa_mem:0.7.17"
+
+crumble:
+  container: "docker://hydragenetics/crumble:0.8.3"
+  extra: "-O CRAM"
+
+picard_mark_duplicates:
+  container: "docker://hydragenetics/picard:2.25.0"
+
+spring:
+  container: "docker://hydragenetics/spring:1.0.1"

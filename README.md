@@ -2,10 +2,11 @@
 
 #### Snakemake module containing steps to minimize big files prior to storage
 
-![Lint](https://github.com/hydra-genetics/prealignment/actions/workflows/lint.yaml/badge.svg?branch=develop)
-![Snakefmt](https://github.com/hydra-genetics/prealignment/actions/workflows/snakefmt.yaml/badge.svg?branch=develop)
-![snakemake dry run](https://github.com/hydra-genetics/prealignment/actions/workflows/snakemake-dry-run.yaml/badge.svg?branch=develop)
-![integration test](https://github.com/hydra-genetics/prealignment/actions/workflows/integration.yaml/badge.svg?branch=develop)
+![compatibility](https://github.com/hydra-genetics/compression/actions/workflows/compatibility.yaml/badge.svg?branch=develop)
+![integration test](https://github.com/hydra-genetics/compression/actions/workflows/integration.yaml/badge.svg?branch=develop)
+![lint](https://github.com/hydra-genetics/compression/actions/workflows/lint.yaml/badge.svg?branch=develop)
+![snakefmt](https://github.com/hydra-genetics/compression/actions/workflows/snakefmt.yaml/badge.svg?branch=develop)
+![snakemake dry run](https://github.com/hydra-genetics/compression/actions/workflows/snakemake-dry-run.yaml/badge.svg?branch=develop)
 
 [![License: GPL-3](https://img.shields.io/badge/License-GPL3-yellow.svg)](https://opensource.org/licenses/gpl-3.0.html)
 
@@ -20,7 +21,7 @@ making for a smooth transition. Input data should be specified via `samples.tsv`
 
 In order to use this module, the following dependencies are required:
 
-[![hydra-genetics](https://img.shields.io/badge/hydragenetics-v0.9.0-blue)](https://github.com/hydra-genetics/)
+[![hydra-genetics](https://img.shields.io/badge/hydragenetics-v0.10.0-blue)](https://github.com/hydra-genetics/)
 [![pandas](https://img.shields.io/badge/pandas-1.3.1-blue)](https://pandas.pydata.org/)
 [![python](https://img.shields.io/badge/python-3.8-blue)](https://www.python.org/)
 [![snakemake](https://img.shields.io/badge/snakemake-6.10.0-blue)](https://snakemake.readthedocs.io/en/stable/)
@@ -30,8 +31,8 @@ In order to use this module, the following dependencies are required:
 
 ### Sample and unit data
 
-Input data should be added to [`samples.tsv`](https://github.com/hydra-genetics/prealignment/blob/develop/config/samples.tsv)
-and [`units.tsv`](https://github.com/hydra-genetics/prealignment/blob/develop/config/units.tsv).
+Input data should be added to [`samples.tsv`](https://github.com/hydra-genetics/compression/blob/develop/config/samples.tsv)
+and [`units.tsv`](https://github.com/hydra-genetics/compression/blob/develop/config/units.tsv).
 The following information need to be added to these files:
 
 | Column Id | Description |
@@ -84,6 +85,13 @@ module compression:
 use rule * from compression as compression_*
 ```
 
+### Compatibility
+
+Latest:
+ - alignment:v0.1.0
+
+ See [COMPATIBLITY.md](../master/COMPATIBLITY.md) file for a complete list of module compatibility.
+
 ### Output files
 
 The following output files should be targeted via another rule:
@@ -91,7 +99,7 @@ The following output files should be targeted via another rule:
 | File | Description |
 |---|---|
 | `compression/crumble/{file}.crumble.cram` | `crumble`-compressed `.cram` alignment files |
-| `compression/spring/{sample}_{flowcell}_{lane}_{type}.spring` | `spring`-compressed `.fastq` read file pair |
+| `compression/spring/{sample}_{flowcell}_{lane}_{barcode}_{type}.spring` | `spring`-compressed `.fastq` read file pair |
 
 ## :judge: Rule Graph
 

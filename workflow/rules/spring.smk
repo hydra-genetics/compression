@@ -11,14 +11,14 @@ rule spring:
             get_fastq_file(units, wildcards, "fastq2"),
         ],
     output:
-        spring=temp("compression/spring/{sample}_{flowcell}_{lane}_{type}.spring"),
+        spring=temp("compression/spring/{sample}_{flowcell}_{lane}_{barcode}_{type}.spring"),
     params:
         extra=get_spring_extra,
     log:
-        "compression/spring/{sample}_{flowcell}_{lane}_{type}.spring.log",
+        "compression/spring/{sample}_{flowcell}_{lane}_{barcode}_{type}.spring.log",
     benchmark:
         repeat(
-            "compression/spring/{sample}_{flowcell}_{lane}_{type}.spring.benchmark.tsv",
+            "compression/spring/{sample}_{flowcell}_{lane}_{barcode}_{type}.spring.benchmark.tsv",
             config.get("spring", {}).get("benchmark_repeats", 1),
         )
     resources:
