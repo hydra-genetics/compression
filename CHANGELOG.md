@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.1.0](https://www.github.com/hydra-genetics/compression/compare/v1.0.0...v1.1.0) (2022-05-09)
+
+
+### Features
+
+* Add compatibility checks ([fbd95a3](https://www.github.com/hydra-genetics/compression/commit/fbd95a38a0be4921831ddbcb15c729f7943ec431))
+* Match cram input to alignment module 0.1.0 ([a44c9cb](https://www.github.com/hydra-genetics/compression/commit/a44c9cb8f57cf948bca7370d87da2d9df2dfeefb))
+
+
+### Documentation
+
+* Update README ([d12020d](https://www.github.com/hydra-genetics/compression/commit/d12020d13db624c6f0bcdcbc9ad63c352a9abe7c))
+
 ## [1.0.0](https://www.github.com/hydra-genetics/compression/compare/v0.1.0...v1.0.0) (2022-03-24)
 
 
