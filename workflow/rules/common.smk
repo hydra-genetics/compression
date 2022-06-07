@@ -13,7 +13,7 @@ from hydra_genetics.utils.units import *
 from snakemake.utils import min_version
 from snakemake.utils import validate
 
-min_version("6.10")
+min_version("7.8.0")
 
 ### Set and validate config file
 
