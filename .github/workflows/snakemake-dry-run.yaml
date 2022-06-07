@@ -33,4 +33,4 @@ jobs:
       - name: snakemake dry run, merge
         working-directory: .tests/integration
         run: |
-          snakemake --cores 2 -n -s ../../workflow/Snakefile
+          snakemake --cores 2 -n -s ../../workflow/Snakefile --configfile config.yaml
