@@ -70,12 +70,12 @@ def get_spring_extra(wildcards: snakemake.io.Wildcards):
 
 def compile_output_list(wildcards: snakemake.io.Wildcards):
     output_list = [
-        "compression/spring/%s_%s_%s_%s_%s.spring" % (sample, flowcell, lane, barcode, t)
+        "compression/spring/%s_%s_%s_%s_%s.spring" % (sample, t, flowcell, lane, barcode)
         for sample in set(units["sample"])
+        for t in set(units["type"])
         for flowcell in set(units["flowcell"])
         for lane in set(units["lane"])
         for barcode in set(units["barcode"])
-        for t in set(units["type"])
     ]
     output_list.append(
         [

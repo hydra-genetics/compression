@@ -8,6 +8,10 @@ default_container: "docker://hydragenetics/common:0.1.3"
 
 reference:
   fasta: "reference/WASH7P.fna"
+  design_bed: "reference/twist_DNA_solid.HES45.annotated.bed"
+
+bwa_mem:
+  container: "docker://hydragenetics/bwa_mem:0.7.17"
   dict: "reference/WASH7P.dict"
   amb: "reference/WASH7P.fna.amb"
   ann: "reference/WASH7P.fna.ann"
@@ -15,10 +19,6 @@ reference:
   fai: "reference/WASH7P.fna.fai"
   pac: "reference/WASH7P.fna.pac"
   sa: "reference/WASH7P.fna.sa"
-  design_bed: "reference/twist_DNA_solid.HES45.annotated.bed"
-
-bwa_mem:
-  container: "docker://hydragenetics/bwa_mem:0.7.17"
 
 crumble:
   container: "docker://hydragenetics/crumble:0.8.3"
