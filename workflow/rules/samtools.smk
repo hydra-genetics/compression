@@ -27,8 +27,6 @@ rule samtools_view:
         threads=config.get("samtools_view", {}).get("threads", config["default_resources"]["threads"]),
         time=config.get("samtools_view", {}).get("time", config["default_resources"]["time"]),
     threads: config.get("samtools_view", {}).get("threads", config["default_resources"]["threads"])
-    conda:
-        "../envs/samtools.yaml"
     container:
         config.get("samtools_view", {}).get("container", config["default_container"])
     message:

@@ -88,7 +88,7 @@ use rule * from compression as compression_*
 ### Compatibility
 
 Latest:
- - alignment:v0.1.0
+ - alignment:v0.4.0
 
  See [COMPATIBLITY.md](../master/COMPATIBLITY.md) file for a complete list of module compatibility.
 
