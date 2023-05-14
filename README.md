@@ -61,7 +61,7 @@ The workflow repository contains a small test dataset `.tests/integration` which
 
 ```bash
 $ cd .tests/integration
-$ snakemake -s ../../Snakefile -j1 --use-singularity
+$ snakemake -s ../../Snakefile -j1 --configfile config.yaml --use-singularity
 ```
 
 ## :rocket: Usage
@@ -88,7 +88,7 @@ use rule * from compression as compression_*
 ### Compatibility
 
 Latest:
- - alignment:v0.1.0
+ - alignment:v0.4.0
 
  See [COMPATIBLITY.md](../master/COMPATIBLITY.md) file for a complete list of module compatibility.
 
