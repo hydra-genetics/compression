@@ -25,8 +25,6 @@ rule crumble:
         threads=config.get("crumble", {}).get("threads", config["default_resources"]["threads"]),
         time=config.get("crumble", {}).get("time", config["default_resources"]["time"]),
     threads: config.get("crumble", {}).get("threads", config["default_resources"]["threads"])
-    conda:
-        "../envs/crumble.yaml"
     container:
         config.get("crumble", {}).get("container", config["default_container"])
     message:
