@@ -1,0 +1,22 @@
+$schema: "http://json-schema.org/draft-04/schema#"
+description: snakemake rule input and output files description file
+type: object
+properties:
+  samtools_index:
+    type: object
+    description: input and output parameters for samtools_index
+    properties:
+      input:
+        type: object
+        description: list of inputs
+        properties:
+          cram:
+            type: string
+            description: cram file
+      output:
+        type: object
+        description: list of outputs
+        properties:
+          crai:
+            type: string
+            description: cram index file
