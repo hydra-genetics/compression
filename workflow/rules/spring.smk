@@ -11,14 +11,14 @@ rule spring:
             get_fastq_file(units, wildcards, "fastq2"),
         ],
     output:
-        spring=temp("compression/spring/{sample}_{flowcell}_{lane}_{barcode}_{type}.spring"),
+        spring=temp("compression/spring/{sample}_{type}_{flowcell}_{lane}_{barcode}.spring"),
     params:
         extra=get_spring_extra,
     log:
-        "compression/spring/{sample}_{flowcell}_{lane}_{barcode}_{type}.spring.log",
+        "compression/spring/{sample}_{type}_{flowcell}_{lane}_{barcode}.spring.log",
     benchmark:
         repeat(
-            "compression/spring/{sample}_{flowcell}_{lane}_{barcode}_{type}.spring.benchmark.tsv",
+            "compression/spring/{sample}_{type}_{flowcell}_{lane}_{barcode}.spring.benchmark.tsv",
             config.get("spring", {}).get("benchmark_repeats", 1),
         )
     resources:
@@ -28,8 +28,6 @@ rule spring:
         threads=config.get("spring", {}).get("threads", config["default_resources"]["threads"]),
         time=config.get("spring", {}).get("time", config["default_resources"]["time"]),
     threads: config.get("spring", {}).get("threads", config["default_resources"]["threads"])
-    conda:
-        "../envs/spring.yaml"
     container:
         config.get("spring", {}).get("container", config["default_container"])
     message:

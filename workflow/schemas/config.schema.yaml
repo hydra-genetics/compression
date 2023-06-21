@@ -34,6 +34,19 @@ properties:
       extra:
         type: string
         description: parameters that should be forwarded
+  samtools_index:
+    type: object
+    description: parameters for samtools_index
+    properties:
+      benchmark_repeats:
+        type: integer
+        description: set number of times benchmark should be repeated
+      container:
+        type: string
+        description: name or path to docker/singularity container
+      extra:
+        type: string
+        description: parameters that should be forwarded
   samtools_view:
     type: object
     description: parameters for samtools_view

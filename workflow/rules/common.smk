@@ -13,12 +13,12 @@ from hydra_genetics.utils.units import *
 from snakemake.utils import min_version
 from snakemake.utils import validate
 
-min_version("6.10")
+min_version("7.8.0")
 
 ### Set and validate config file
 
-
-configfile: "config.yaml"
+if not workflow.overwrite_configfiles:
+    sys.exit("At least one config file must be passed using --configfile/--configfiles, by command line or a profile!")
 
 
 validate(config, schema="../schemas/config.schema.yaml")
@@ -70,12 +70,12 @@ def get_spring_extra(wildcards: snakemake.io.Wildcards):
 
 def compile_output_list(wildcards: snakemake.io.Wildcards):
     output_list = [
-        "compression/spring/%s_%s_%s_%s_%s.spring" % (sample, flowcell, lane, barcode, t)
+        "compression/spring/%s_%s_%s_%s_%s.spring" % (sample, t, flowcell, lane, barcode)
         for sample in set(units["sample"])
+        for t in set(units["type"])
         for flowcell in set(units["flowcell"])
         for lane in set(units["lane"])
         for barcode in set(units["barcode"])
-        for t in set(units["type"])
     ]
     output_list.append(
         [
