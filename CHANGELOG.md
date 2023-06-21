@@ -1,5 +1,30 @@
 # Changelog
 
+## [2.0.0](https://www.github.com/hydra-genetics/compression/compare/v1.1.0...v2.0.0) (2023-06-21)
+
+
+### ⚠ BREAKING CHANGES
+
+* **spring:** update the wildcards to match ordering in prealignment
+
+### Features
+
+* add rule to index a cram file ([3ef0309](https://www.github.com/hydra-genetics/compression/commit/3ef0309e388a78021f91f5e35a472ecc34a974b5))
+* make config.yaml location more flexible ([8e58633](https://www.github.com/hydra-genetics/compression/commit/8e586338582900b28d0e725c90bbdb76ee474b85))
+* make configfile/confgilefiles argument mandatory ([47fab52](https://www.github.com/hydra-genetics/compression/commit/47fab52f9a35b6749069e5a7b6a089a32aad18fb))
+* update snakemake version, allow range up to version 8 ([47e8d3d](https://www.github.com/hydra-genetics/compression/commit/47e8d3ddaccdc3b9cd925d0d5a7967da27afbda8))
+* update snakemake-version ([4ac5d47](https://www.github.com/hydra-genetics/compression/commit/4ac5d47c41e5a13d294aa260401d1cad66b802d7))
+
+
+### Bug Fixes
+
+* **spring:** update the wildcards to match ordering in prealignment ([11b5612](https://www.github.com/hydra-genetics/compression/commit/11b5612b3ac49c758533554fc85e490f6354c93d))
+
+
+### Documentation
+
+* add configfile option to example ([d6a1945](https://www.github.com/hydra-genetics/compression/commit/d6a1945ed262f06666a25fc97d5a5cfec17b54aa))
+
 ## [1.1.0](https://www.github.com/hydra-genetics/compression/compare/v1.0.0...v1.1.0) (2022-05-09)
 
 
