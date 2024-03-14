@@ -14,7 +14,7 @@ rule spring:
         spring=temp("compression/spring/{sample}_{type}_{flowcell}_{lane}_{barcode}.spring"),
     params:
         extra=get_spring_extra,
-        temp=f"compression/spring/{wildcards.sample}_{wildcards.type}_{wildcards.flowcell}_{wildcards.lane}_{wildcards.barcode}",
+        temp=lambda wildcards: f"compression/spring/{wildcards.sample}_{wildcards.type}_{wildcards.flowcell}_{wildcards.lane}_{wildcards.barcode}",
     log:
         "compression/spring/{sample}_{type}_{flowcell}_{lane}_{barcode}.spring.log",
     benchmark:
