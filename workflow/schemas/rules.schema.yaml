@@ -20,3 +20,21 @@ properties:
           crai:
             type: string
             description: cram index file
+  spring:
+    type: object
+    description: input and output parameters for spring
+    properties:
+      input:
+        type: object
+        description: list of inputs
+        properties:
+          fastq:
+            type: string
+            description: fastq files
+      output:
+        type: object
+        description: list of outputs
+        properties:
+          spring:
+            type: string
+            description: compressed spring file
