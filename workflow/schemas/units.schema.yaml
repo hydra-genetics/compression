@@ -45,7 +45,7 @@ properties:
     description: processing unit from the bam header
   basecalling_model:
         type: string
-        description: absolute path to bam file
+        description: model used for basecalling
   run_id:
     type: string
     description: Run id
