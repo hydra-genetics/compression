@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.1.0](https://www.github.com/hydra-genetics/compression/compare/v2.0.0...v2.1.0) (2025-08-29)
+
+
+### Features
+
+* update units schema and validation for long read units.tsv ([3ca5a47](https://www.github.com/hydra-genetics/compression/commit/3ca5a47d5a3c78fa0ea473d17b44cacc92a4a4c9))
+
+
+### Documentation
+
+* Update description in units.schema.yaml ([b3ef8cc](https://www.github.com/hydra-genetics/compression/commit/b3ef8ccd2989e33af1b627e03fd37436574b6cac))
+
 ## [2.0.0](https://www.github.com/hydra-genetics/compression/compare/v1.1.0...v2.0.0) (2023-06-21)
 
 
